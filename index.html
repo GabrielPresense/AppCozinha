@@ -13,69 +13,66 @@
         <p>Encontre chefs experientes para cozinhar para você ou fazer compras no mercado.</p>
     </header>
     
-    <!-- Formulário de Busca de Chefs -->
-    <section class="search">
-        <h2>Busque por Chefs ou Serviços</h2>
-        <form action="resultados.html" method="GET">
-            <input type="text" name="busca" placeholder="Busque por chefs ou serviços..." required>
-            <button type="submit">Buscar</button>
-        </form>
-    </section>
+    <main>
+        <!-- Formulário de Busca de Chefs -->
+        <section class="search">
+            <h2>Busque por Chefs ou Serviços</h2>
+            <form action="resultados.html" method="GET">
+                <input type="text" name="busca" placeholder="Busque por chefs ou serviços..." required>
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
 
-    <!-- Campo de Tipo de Culinária -->
-    <section class="culinaria">
-        <h3>Escolha o Tipo de Culinária</h3>
-        <form id="culinaria-form">
-            <select name="culinaria" id="culinaria" onchange="redirectToCulinariaPage()">
-                <option value="brasileira">Brasileira</option>
-                <option value="italiana">Italiana</option>
-                <option value="francesa">Francesa</option>
-                <option value="mexicana">Mexicana</option>
-                <option value="japonesa">Japonesa</option>
-                <option value="chinesa">Chinesa</option>
-                <option value="indiana">Indiana</option>
-                <option value="arabe">Árabe</option>
-                <option value="americana">Americana</option>
-                <option value="espanhola">Espanhola</option>
-                <option value="tailandesa">Tailandesa</option>
-                <option value="coreana">Coreana</option>
-                <option value="portuguesa">Portuguesa</option>
-                <option value="chilena">Chilena</option>
-                <option value="polonesa">Polonesa</option>
-                <option value="argelina">Argelina</option>
-            </select>
-            <button type="submit" onclick="redirectToCulinariaPage(); return false;">Filtrar</button>
-        </form>
-    </section>
+        <!-- Campo de Tipo de Culinária -->
+        <section class="culinaria">
+            <h3>Escolha o Tipo de Culinária</h3>
+            <form id="culinaria-form">
+                <select name="culinaria" id="culinaria" onchange="redirectToCulinariaPage()">
+                    <option value="brasileira">Brasileira</option>
+                    <option value="italiana">Italiana</option>
+                    <option value="francesa">Francesa</option>
+                    <option value="mexicana">Mexicana</option>
+                    <option value="japonesa">Japonesa</option>
+                    <option value="chinesa">Chinesa</option>
+                    <option value="indiana">Indiana</option>
+                    <option value="arabe">Árabe</option>
+                    <option value="americana">Americana</option>
+                    <option value="espanhola">Espanhola</option>
+                    <option value="tailandesa">Tailandesa</option>
+                    <option value="coreana">Coreana</option>
+                    <option value="portuguesa">Portuguesa</option>
+                    <option value="chilena">Chilena</option>
+                    <option value="polonesa">Polonesa</option>
+                    <option value="argelina">Argelina</option>
+                </select>
+                <button type="submit" onclick="redirectToCulinariaPage(); return false;">Filtrar</button>
+            </form>
+        </section>
 
-    <!-- Serviços Disponíveis -->
-    <section class="services">
-        <h2>Serviços Disponíveis</h2>
-        <ul>
-            <li><a href="chef-em-casa.html">Chef em Casa</a></li>
-            <li><a href="compras-no-mercado.html">Compras no Mercado</a></li>
-            <li><a href="eventos-e-festas.html">Eventos e Festas</a></li>
-            <li><a href="consultoria-gastronomica.html">Consultoria Gastronômica</a></li>
-        </ul>
-    </section>
-    
-    <!-- Chamada para Cadastro -->
-    <section class="call-to-action">
-        <h2>Cadastre-se Agora</h2>
-        <p>Seja um cliente ou um chef, junte-se à nossa plataforma e aproveite!</p>
-    
-        <form class="signup-form">
-            <input type="text" placeholder="Nome completo" required>
-            <input type="email" placeholder="E-mail" required>
-            <input type="password" placeholder="Senha" required>
-            <button type="submit">Inscreva-se</button>
-        </form>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Contrate um Chef - Todos os direitos reservados.</p>
-    </footer>
-
+        <!-- Serviços Disponíveis -->
+        <section class="services">
+            <h2>Serviços Disponíveis</h2>
+            <ul>
+                <li><a href="chef-em-casa.html">Chef em Casa</a></li>
+                <li><a href="compras-no-mercado.html">Compras no Mercado</a></li>
+                <li><a href="eventos-e-festas.html">Eventos e Festas</a></li>
+                <li><a href="consultoria-gastronomica.html">Consultoria Gastronômica</a></li>
+            </ul>
+        </section>
+        
+        <!-- Chamada para Cadastro -->
+        <section class="call-to-action">
+            <h2>Cadastre-se Agora</h2>
+            <p>Seja um cliente ou um chef, junte-se à nossa plataforma e aproveite!</p>
+        
+            <form class="signup-form">
+                <input type="text" placeholder="Nome completo" required>
+                <input type="email" placeholder="E-mail" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit">Inscreva-se</button>
+            </form>
+        </section>
+    </main>
     <script>
         function redirectToCulinariaPage() {
             var culinaria = document.getElementById('culinaria').value;
@@ -88,6 +85,10 @@
             event.preventDefault();
             redirectToCulinariaPage();
         });
-    </script>   
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Contrate um Chef - Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
