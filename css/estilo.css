@@ -1,21 +1,27 @@
+:root {
+    --primary-color: #ff7043;
+    --primary-hover: #e65c34;
+}
+
 /* Estilos gerais */
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;
     margin: 0;
-    display: flex;
-    flex-direction: column;
     padding: 0;
     text-align: center;
     background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
     flex: 1;
 }
 
+/* Cabeçalho */
 header {
-    background-color: #ff7043;
+    background-color: var(--primary-color);
     color: white;
     padding: 20px;
 }
@@ -32,12 +38,35 @@ header a:hover {
     text-decoration: underline;
 }
 
+/* Botões */
+button, .search button, .signup-form button, .culinaria button, .culinaria-brasileira button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+button:hover, .search button:hover, .signup-form button:hover, .culinaria button:hover, .culinaria-brasileira button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Foco em botões e links */
+button:focus, a:focus, .signup-form input:focus, .culinaria select:focus {
+    outline: 3px solid var(--primary-color);
+    border-color: var(--primary-color);
+}
+
 /* Campo de busca */
 .search {
     margin: 20px;
 }
 
-.search input {
+.search input, .culinaria select {
     padding: 10px;
     width: 60%;
     max-width: 400px;
@@ -45,25 +74,8 @@ header a:hover {
     border-radius: 5px;
 }
 
-.call-to-action button {
-    margin-bottom: 20px; /* Adiciona um espaço extra abaixo do botão */
-}
-
-.search button {
-    padding: 10px 20px;
-    background-color: #ff7043;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.search button:hover {
-    background-color: #e65c34;
-}
-
-/* Seção de serviços */
-.services {
+/* Containers gerais com estilo similar */
+.box-container, .services, .service-detail, .culinaria {
     background-color: white;
     padding: 20px;
     margin: 20px;
@@ -71,12 +83,12 @@ header a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.services ul {
+.services ul, .service-detail ul, .culinaria-brasileira ul {
     list-style-type: none;
     padding: 0;
 }
 
-.services li {
+.services li, .service-detail li, .culinaria-brasileira li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -90,8 +102,8 @@ header a:hover {
     padding: 10px;
 }
 
-.services li:hover {
-    background-color: #ff7043;
+.services li:hover, .culinaria-brasileira li:hover {
+    background-color: var(--primary-color);
     color: white;
 }
 
@@ -99,63 +111,18 @@ header a:hover {
     color: white;
 }
 
-/* Estilização das páginas individuais */
-.service-detail {
-    background-color: white;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Títulos */
+.service-detail h2, .culinaria h3, .culinaria-brasileira h1 {
+    color: var(--primary-color);
 }
 
-.service-detail h2 {
-    color: #ff7043;
-}
-
-.service-detail ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.service-detail li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-/* Botão de ação */
-button {
-    padding: 10px 20px;
-    background-color: #ff7043;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #e65c34;
-}
-
-/* Rodapé */
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    left: 0;
-}
-
-/* Estilização do formulário de inscrição */
+/* Formulário de inscrição */
 .signup-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
     max-width: 300px;
-    margin: 20px auto 40px auto; /* Espaçamento extra na parte inferior */
+    margin: 20px auto 40px auto;
 }
 
 .signup-form input {
@@ -165,241 +132,28 @@ footer {
     font-size: 16px;
 }
 
-.signup-form input:focus {
-    border-color: #ff7043;
-    outline: none;
-}
-
-.signup-form button {
-    padding: 10px;
-    background-color: #ff7043;
+/* Rodapé */
+footer {
+    background-color: #333;
     color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background 0.3s;
-}
-
-.signup-form button:hover {
-    background-color: #e65c34;
-}
-
-/* Seção de Tipo de Culinária */
-.culinaria {
-    background-color: white;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    padding: 10px 0;
+    width: 100%;
 }
 
-.culinaria h3 {
-    color: #000;
-    margin-bottom: 20px;
-    font-size: 24px;
+/* Imagens de pratos */
+.service-detail ul li img, .culinaria-brasileira .cardapio img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
 }
 
-.culinaria select {
-    padding: 10px;
-    width: 60%;
-    max-width: 400px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.culinaria select:focus {
-    border-color: #ff7043;
-    outline: none;
-}
-
-.culinaria button {
-    padding: 10px 20px;
-    background-color: #ff7043;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-size: 16px;
-}
-
-.culinaria button:hover {
-    background-color: #e65c34;
-}
-
-/* Estilos gerais */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #f5f5f5;
-}
-
-header {
-    background-color: #ff7043;
-    color: white;
-    padding: 20px;
-}
-
-header a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    margin-top: 10px;
-}
-
-header a:hover {
-    text-decoration: underline;
-}
-
-/* Detalhes do serviço */
-.service-detail {
-    background-color: white;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.service-detail h2 {
-    color: #ff7043;
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-.service-detail ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-    margin: 0 auto;
-    max-width: 500px;
-}
-
-.service-detail li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #ff7043;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #e65c34;
-}
-
-/* Estilos para a página Culinárias Brasileira */
-.culinaria-brasileira {
-    background-color: #f9f9f9;
-    padding: 20px;
-    text-align: center;
-}
-
-.culinaria-brasileira h1 {
-    font-size: 32px;
-    color: #ff7043;
-    margin-bottom: 20px;
-}
-
-.culinaria-brasileira p {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-.culinaria-brasileira ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.culinaria-brasileira li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    font-size: 18px;
-    color: #333;
-    transition: background-color 0.3s ease;
-}
-
-.culinaria-brasileira li:hover {
-    background-color: #ff7043;
-    color: white;
-}
-
-.culinaria-brasileira .cardapio img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.culinaria-brasileira button {
-    padding: 12px 20px;
-    background-color: #ff7043;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 30px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-}
-
-.culinaria-brasileira button:hover {
-    background-color: #e65c34;
-}
-
-/* Estilização das imagens dentro da lista */
-.prato-img {
-    width: 100px; /* Define um tamanho fixo para as imagens */
-    height: auto;
-    margin-right: 20px; /* Espaçamento à direita das imagens */
-    border-radius: 8px; /* Bordas arredondadas nas imagens */
-}
-
-/* Ajustando o layout das listas para exibir as imagens e os textos lado a lado */
-.service-detail ul {
-    list-style-type: none; /* Remove os marcadores da lista */
-    padding: 0;
-}
-
-.service-detail li {
-    display: flex; /* Exibe as imagens e textos em linha */
-    align-items: center; /* Alinha verticalmente os itens */
-    margin-bottom: 20px; /* Espaço entre os itens */
-    font-size: 18px;
-}
-
-.service-detail li img {
-    margin-right: 15px; /* Espaçamento entre a imagem e o nome do prato */
-}
-
-/* Estilos para as imagens dentro da lista de pratos */
-.service-detail ul li img {
-    width: 200px; /* Define uma largura fixa para a imagem */
-    height: 150px; /* Define uma altura fixa para a imagem */
-    object-fit: cover; /* Faz a imagem cobrir completamente o espaço definido, sem distorcer */
-    border-radius: 8px; /* Adiciona bordas arredondadas, se necessário */
-    margin-right: 15px; /* Adiciona um espaço à direita da imagem */
-}
-
-/* Alinhar a imagem e o texto dentro da lista */
+/* Layout das listas com imagens */
 .service-detail ul li {
     display: flex;
-    align-items: center; /* Alinha a imagem com o texto */
-    margin-bottom: 15px; /* Espaço entre os itens */
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px;
 }
-
-
